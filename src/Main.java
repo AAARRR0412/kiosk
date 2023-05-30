@@ -147,12 +147,16 @@ class Item extends Menu {
         this.price = c;
     }
 
+  // [ order 클래스의 price, name 변수와 Item 클래스의 price와 name 변수를 일치 시켜주는 메서드 ]
+
     public double getPrice() {
         return this.price;
     }
     public String getName() {
         return this.name;
     }
+
+  //
 
     static Item shack = new Item("Shack Burger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", 6.9);
     static Item smoke = new Item("Smoke Shack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", 8.9);
@@ -173,33 +177,22 @@ class Item extends Menu {
 
         int max = 5;
         int choose = Menu.choose(max);
-        Order order = new Order();
 
         switch (choose) {
             case 1:
-                order.setName(shack.getName());
-                order.setPrice(shack.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(shack.getName(), shack.getPrice()));
                 break;
             case 2:
-                order.setName(smoke.getName());
-                order.setPrice(smoke.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(smoke.getName(), smoke.getPrice()));
                 break;
             case 3:
-                order.setName(shroom.getName());
-                order.setPrice(shroom.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(shroom.getName(), shroom.getPrice()));
                 break;
             case 4:
-                order.setName(cheese.getName());
-                order.setPrice(cheese.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(cheese.getName(), cheese.getPrice()));
                 break;
             case 5:
-                order.setName(clasic.getName());
-                order.setPrice(clasic.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(clasic.getName(), clasic.getPrice()));
                 break;
         }
 
@@ -221,23 +214,16 @@ class Item extends Menu {
 
         int max = 3;
         int choose = Menu.choose(max);
-        Order order = new Order();
 
         switch (choose) {
             case 1:
-                order.setName(vanilla.getName());
-                order.setPrice(vanilla.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(vanilla.getName(), vanilla.getPrice()));
                 break;
             case 2:
-                order.setName(strawberry.getName());
-                order.setPrice(strawberry.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(strawberry.getName(), strawberry.getPrice()));
                 break;
             case 3:
-                order.setName(choco.getName());
-                order.setPrice(choco.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(choco.getName(), choco.getPrice()));
                 break;
         }
 
@@ -260,23 +246,16 @@ class Item extends Menu {
 
         int max = 3;
         int choose = Menu.choose(max);
-        Order order = new Order();
 
         switch (choose) {
             case 1:
-                order.setName(coke.getName());
-                order.setPrice(coke.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(coke.getName(), coke.getPrice()));
                 break;
             case 2:
-                order.setName(soda.getName());
-                order.setPrice(soda.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(soda.getName(), soda.getPrice()));
                 break;
             case 3:
-                order.setName(ambasa.getName());
-                order.setPrice(ambasa.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(ambasa.getName(), ambasa.getPrice()));
                 break;
         }
 
@@ -302,19 +281,13 @@ class Item extends Menu {
 
         switch (choose) {
             case 1:
-                order.setName(kas.getName());
-                order.setPrice(kas.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(kas.getName(), kas.getPrice()));
                 break;
             case 2:
-                order.setName(hite.getName());
-                order.setPrice(hite.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(hite.getName(), hite.getPrice()));
                 break;
             case 3:
-                order.setName(filite.getName());
-                order.setPrice(filite.getPrice());
-                cart.addOrder(order);
+                cart.addOrder(new Order(filite.getName(), filite.getPrice()));
                 break;
         }
 
@@ -350,6 +323,11 @@ class Cart {
 class Order {
     String name; // 이름
     double price; // 가격
+
+    public Order(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
 
     public void setPrice(double price) {
         this.price = price;
