@@ -114,7 +114,7 @@ class Menu {
         Scanner sc = new Scanner(System.in);
         String result = sc.nextLine();
 
-        if (result.equalsIgnoreCase("Y" ) | result.equalsIgnoreCase("y" )) {
+        if (result.equalsIgnoreCase("Y" )) {
             orderCount++;
             System.out.println("대기번호는 [ " + orderCount + " ] 번 입니다.");
             System.out.println("");
