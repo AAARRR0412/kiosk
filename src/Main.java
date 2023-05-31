@@ -83,8 +83,7 @@ class Menu {
 
         Item item = new Item();
 
-        int max = 6;
-        int choose = choose(max);
+        int choose = choose(6);
         switch (choose) {
             case 1:
                 item.Burger_Menu(cart);
@@ -204,8 +203,7 @@ class Item extends Menu {
         System.out.println("4. " + cheese.toString());
         System.out.println("5. " + clasic.toString());
 
-        int max = 5;
-        int choose = Menu.choose(max);
+        int choose = Menu.choose(5);
 
         switch (choose) {
             case 1:
@@ -239,8 +237,7 @@ class Item extends Menu {
         System.out.println("2. " + strawberry.toString());
         System.out.println("3. " + choco.toString());
 
-        int max = 3;
-        int choose = Menu.choose(max);
+        int choose = Menu.choose(3);
 
         switch (choose) {
             case 1:
@@ -268,8 +265,7 @@ class Item extends Menu {
         System.out.println("2. " + soda.toString());
         System.out.println("3. " + ambasa.toString());
 
-        int max = 3;
-        int choose = Menu.choose(max);
+        int choose = Menu.choose(3);
 
         switch (choose) {
             case 1:
@@ -297,8 +293,7 @@ class Item extends Menu {
         System.out.println("2. " + hite.toString());
         System.out.println("3. " + filite.toString());
 
-        int max = 3;
-        int choose = Menu.choose(max);
+        int choose = Menu.choose(3);
 
         switch (choose) {
             case 1:
